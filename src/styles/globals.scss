@@ -1,0 +1,47 @@
+@import "./variables/colors.scss";
+@import "./variables/colors.css";
+@import "./themes/dark.scss";
+@import "./themes/light.scss";
+
+/************************ 
+*** ATTRUBUTE=CLASS ***
+************************/
+
+/* 
+:root {
+  background-color: $slate-50;
+  color: $slate-950;
+
+  &.dark {
+    background-color: $slate-950;
+    color: $slate-100;
+  }
+}
+ */
+
+/* 
+:root {
+  background-color: $slate-50;
+  color: $slate-950;
+}
+[data-theme="dark"] {
+  background-color: $slate-950;
+  color: $slate-100;
+}
+ */
+
+// :root {
+//   --background: white;
+//   --foreground: black;
+// }
+// [data-theme="dark"] {
+//   --background: black;
+//   --foreground: white;
+// }
+
+body {
+  background-color: var(--background-1);
+  color: var(--font-1);
+  display: flex;
+  justify-content: center;
+}
