@@ -6,39 +6,48 @@ import Image from "next/image";
 import cssModule from "@/styles/modules/components/core/AppTogglebutton.module.scss";
 
 interface Props {
-  previousValue: boolean;
+  uniqueId: string;
   toggleFn: Function;
+  previousValue?: boolean;
   iconLeft?: HTMLImageElement;
   iconRight?: HTMLImageElement;
 }
 
 export default function AppToggleButton({
-  previousValue,
+  uniqueId,
   toggleFn,
+  previousValue,
   iconLeft,
   iconRight,
 }: Props) {
-  const [isChecked, setIsChecked] = useState(false);
+  // STATE
+  const [isChecked, setIsChecked] = useState<boolean>(() => {
+    return previousValue !== undefined ? previousValue : false;
+  });
 
+  // LIFECYCLE
   useEffect(() => {
-    setIsChecked(previousValue);
-  }, [previousValue]);
+    if (previousValue !== undefined && previousValue !== isChecked)
+      setIsChecked(previousValue);
+  }, [previousValue, isChecked]);
 
+  // FUNCTIONS
   function onInputChange(e: BaseSyntheticEvent) {
-    setIsChecked(e.target.checked);
-    toggleFn(e.target.checked);
+    const newValue = e.target.checked;
+    setIsChecked(newValue);
+    toggleFn(newValue);
   }
 
   return (
     <div className={cssModule["toggle-wrapper"]}>
       <div className={cssModule["input-wrap"]}>
         <input
-          id="input"
+          id={uniqueId}
           type="checkbox"
           checked={isChecked}
           onChange={onInputChange}
         />
-        <label htmlFor="input">
+        <label htmlFor={uniqueId}>
           {iconLeft && (
             <Image
               src={iconLeft?.src}

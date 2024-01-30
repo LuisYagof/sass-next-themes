@@ -15,6 +15,7 @@ export function ThemeToggle() {
 
   return (
     <AppToggleButton
+      uniqueId="toggle-theme"
       previousValue={resolvedTheme === "dark"}
       toggleFn={toggleTheme}
       iconRight={MoonIcon}
