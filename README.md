@@ -1,6 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This is a practice app to test the compatibility of next-themes and sass.
+Objectives:
+
+- Test dark/light mode with NextJS, next-themes and SASS.
+
+- Create an animated toggle button following component architecture.
+
+- Test Zustand storage management.
 
 ## Global deps
 
