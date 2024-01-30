@@ -1,27 +1,33 @@
-.toggle-wrapper {
+main {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-  .theme-switch-btn {
-    height: 3rem;
-    width: 3rem;
+  .toggle-wrapper {
     display: flex;
+    gap: 2rem;
     justify-content: center;
-    align-items: center;
-    border-radius: 45%;
 
-    // background-color: red;
+    .theme-switch-btn {
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 45%;
 
-    /* [data-theme="dark"] {
+      // background-color: red;
+
+      /* [data-theme="dark"] {
       background-color: yellow;
     }
-
+    
     .dark {
       background-color: yellow;
     } */
 
-    // background-color: $theme-icon-bg;
-    background-color: var(--theme-icon-bg);
+      // background-color: $theme-icon-bg;
+      background-color: var(--theme-icon-bg);
+    }
   }
 }

@@ -1,6 +1,7 @@
 // import ThemeSwitch from "@/components/themes/_ThemeSwitch";
 import { ThemeSwitch } from "@/components/themes/ThemeSwitchNT";
 import { ThemeToggle } from "@/components/themes/ThemeToggle";
+import ThemeToggleCounter from "@/components/store/ThemeToggleCounter";
 import cssModule from "@/styles/modules/page.module.scss";
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
         </div>
         <ThemeToggle />
       </div>
+
+      <ThemeToggleCounter />
     </main>
   );
 }

@@ -2,11 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { useToggleCounter } from "@/store/toggleCounter.store";
 
 export function ThemeSwitch() {
+  // STORE
+  const { increase } = useToggleCounter();
+
+  // DATA
   const [mounted, setMounted] = useState(false);
+
+  // HOOKS
   const { setTheme, resolvedTheme } = useTheme();
 
+  // LIFECYCLE
   useEffect(() => setMounted(true), []);
 
   if (!mounted)
@@ -14,7 +22,9 @@ export function ThemeSwitch() {
   if (resolvedTheme === "dark")
     return (
       <span
-        onClick={() => setTheme("light")}
+        onClick={() => {
+          setTheme("light"), increase(1);
+        }}
         style={{ userSelect: "none", cursor: "pointer" }}
       >
         🌞
@@ -23,7 +33,9 @@ export function ThemeSwitch() {
   if (resolvedTheme === "light")
     return (
       <span
-        onClick={() => setTheme("dark")}
+        onClick={() => {
+          setTheme("dark"), increase(1);
+        }}
         style={{ userSelect: "none", cursor: "pointer" }}
       >
         🌙
