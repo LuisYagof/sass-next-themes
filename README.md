@@ -12,9 +12,9 @@ Objectives:
 
 I'm using:
 
-#### NODE v20.10.0
+- **NODE - v20.10.0**
 
-#### PNPM v8.12.1
+- **PNPM - v8.12.1**
 
 ## Project deps
 
