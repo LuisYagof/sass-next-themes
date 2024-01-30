@@ -1,6 +1,8 @@
 @import "../../../variables/colors.scss";
 
 .toggle-wrapper {
+  user-select: none;
+
   label {
     display: inline-block;
     position: relative;
@@ -12,6 +14,19 @@
     font-size: 0;
     color: transparent;
     border-radius: 22px;
+
+    .icon {
+      width: 35px;
+      height: 44px;
+      &.left {
+        position: absolute;
+        left: 3px;
+      }
+      &.right {
+        position: absolute;
+        right: 3px;
+      }
+    }
   }
 
   label:after {
@@ -38,7 +53,8 @@
   }
 
   input {
-    position: absolute !important;
+    // position: absolute !important;
+    position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
@@ -50,12 +66,11 @@
   ** ANIMATION **
   **************/
 
-  /* 
   label {
     transition: background-color 500ms ease;
     &:after {
       transition: right 500ms ease, background-color 500ms ease,
         box-shadow 500ms ease;
     }
-  } */
+  }
 }

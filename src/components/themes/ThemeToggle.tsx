@@ -2,6 +2,8 @@
 
 import { useTheme } from "next-themes";
 import AppToggleButton from "@/components/core/AppToggleButton";
+import MoonIcon from "@/assets/icons/themes/moon.svg";
+import SunIcon from "@/assets/icons/themes/sun.svg";
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -15,6 +17,8 @@ export function ThemeToggle() {
     <AppToggleButton
       previousValue={resolvedTheme === "dark"}
       toggleFn={toggleTheme}
+      iconRight={MoonIcon}
+      iconLeft={SunIcon}
     />
   );
 }
