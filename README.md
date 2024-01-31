@@ -8,6 +8,15 @@ Objectives:
 
 - Test Zustand storage management.
 
+<br/>
+
+Table of content:
+
+- [Global dependencies](#global-deps)
+- [Project dependencies and setup](#project-deps)
+- [Running the app](#to-run-the-app-locally)
+- [Extended documentation](#extended-docs)
+
 ## Global deps
 
 I'm using:
@@ -36,4 +45,8 @@ npm run dev
 pnpm dev
 ```
 
-_For extended documentation, explore the [DOCS FOLDER](./docs/)_
+## Extended docs
+
+_For extended documentation, explore the [DOCS FOLDER](./docs/)_:
+
+- Documentation about [External libraries](./docs/EXTERNAL_LIBRARIES.md)
