@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.scss";
 // import { ThemeContext } from "@/context/_ThemeContext";
 import { ThemeProvider } from "@/context/ThemeProvider";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,14 +14,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         {/* <ThemeContext>{children}</ThemeContext> */}
-        <ThemeProvider>{children}</ThemeProvider>
+
+        <ThemeProvider>
+          <NextIntlClientProvider messages={useMessages()}>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
