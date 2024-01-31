@@ -31,9 +31,9 @@ export default function ToggleLanguage({
       <span>Español</span>
       <AppToggleButton
         uniqueId="toggle-language"
-        previousValue={defaultValue === "en"}
         toggleFn={toggleLanguage}
-        // disabled={isPending}
+        isDisabled={isPending}
+        previousValue={defaultValue === "en"}
       />
       <span>English</span>
     </div>

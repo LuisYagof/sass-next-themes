@@ -8,6 +8,7 @@ import cssModule from "@/styles/modules/components/core/AppTogglebutton.module.s
 interface Props {
   uniqueId: string;
   toggleFn: Function;
+  isDisabled?: boolean;
   previousValue?: boolean;
   iconLeft?: HTMLImageElement;
   iconRight?: HTMLImageElement;
@@ -16,6 +17,7 @@ interface Props {
 export default function AppToggleButton({
   uniqueId,
   toggleFn,
+  isDisabled,
   previousValue,
   iconLeft,
   iconRight,
@@ -33,9 +35,11 @@ export default function AppToggleButton({
 
   // FUNCTIONS
   function onInputChange(e: BaseSyntheticEvent) {
-    const newValue = e.target.checked;
-    setIsChecked(newValue);
-    toggleFn(newValue);
+    if (!isDisabled) {
+      const newValue = e.target.checked;
+      setIsChecked(newValue);
+      toggleFn(newValue);
+    }
   }
 
   return (
