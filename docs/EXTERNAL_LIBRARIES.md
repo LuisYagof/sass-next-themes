@@ -10,9 +10,9 @@
 
 For internationalization this project uses `next-intl`.
 
-Its configuration is spread across this files and directories:
+Its configuration is spread across these files and directories:
 
-- **next.config.mjs**, where the function `createNextIntlPlugin` gets as param the custom path to another important file: `i18n.ts`. If there's no custom path to this file, this function will search for it at the root of the `/src` folder by default.
+- **next.config.mjs**, where the function `createNextIntlPlugin` receives the custom path to another important file: `i18n.ts` as a parameter. If there's no custom path to this file, this function will search for it at the root of the `/src` folder by default.
 
 - **src/middleware.ts**
 
@@ -22,7 +22,7 @@ The international dictionaries are placed under `src/locales/messages`.
 
 ### Implementation
 
-To configure the internationalization via app routing the directory `src/app` has to be structured like this:
+To configure the internationalization via app routing, the directory `src/app` has to be structured like this:
 
 ```sh
 src
@@ -89,10 +89,10 @@ Implementation files:
 - **src/styles/globals.scss**
 - **src/styles/themes/dark.scss**
 - **src/styles/themes/light.scss**
-- **src/styles/variables/colors.css**, very important: `next-themes` is not sensitive to sass variables, only to css variables.
+- **src/styles/variables/colors.css**, very important: `next-themes` is not sensitive to SASS variables, only to CSS variables.
 
 ## zustand
 
-To implement shared states in the app this project uses `zustand`. This library is pretty self-explanatory and straight-forward, no config files needed.
+To implement shared states in the app this project uses `zustand`. This library is pretty self-explanatory and straight-forward; no config files needed.
 
-Modularized stores are created under `src/stores` directory and used in client side components.
+Modularized stores are created under the `src/stores` directory and used in client-side components.
