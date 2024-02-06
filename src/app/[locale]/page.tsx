@@ -1,7 +1,6 @@
 import { useTranslations, useLocale } from "next-intl";
 import cssModule from "@/styles/modules/page.module.scss";
-// import ThemeSwitch from "@/components/themes/_ThemeSwitch";
-import { ThemeSwitch } from "@/components/themes/ThemeSwitchNT";
+import { ThemeButton } from "@/components/themes/ThemeButton";
 import { ThemeToggle } from "@/components/themes/ThemeToggle";
 import ThemeToggleCounter from "@/components/store/ThemeToggleCounter";
 import ToggleLanguage from "@/components/lang/ToggleLanguage";
@@ -14,10 +13,9 @@ export default function Home() {
   return (
     <main className={cssModule["main-wrapper"]}>
       <h1>SASS NEXT-THEMES</h1>
-      {/* <ThemeSwitch /> */}
       <div className={cssModule["toggle-wrapper"]}>
         <div className={cssModule["theme-switch-btn"]}>
-          <ThemeSwitch />
+          <ThemeButton />
         </div>
         <ThemeToggle />
       </div>

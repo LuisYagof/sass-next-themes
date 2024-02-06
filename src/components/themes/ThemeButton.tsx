@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useToggleCounter } from "@/store/toggleCounter.store";
 
-export function ThemeSwitch() {
+export function ThemeButton() {
   // STORE
   const { increase } = useToggleCounter();
 
